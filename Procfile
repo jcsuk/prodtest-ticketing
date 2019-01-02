@@ -1,1 +1,1 @@
-web: gunicorn prodtest-ticketing.wsgi --log-file -
+web: gunicorn helloapp.wsgi --log-file -
