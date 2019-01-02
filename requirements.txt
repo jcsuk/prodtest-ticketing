@@ -19,7 +19,7 @@ pandas==0.23.4
 pefile==2018.8.8
 psycopg2-binary==2.7.6
 PyInstaller==3.4
-pyodbc==4.0.24
+
 python-dateutil==2.7.5
 pytz==2018.7
 
