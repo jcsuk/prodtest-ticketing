@@ -129,7 +129,7 @@ USE_TZ = True
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    '/var/www/static/',
+    
 ]
 
 # The absolute path to the directory where collectstatic will collect static files for deployment.
