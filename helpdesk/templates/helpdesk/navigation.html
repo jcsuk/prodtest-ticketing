@@ -13,9 +13,9 @@
     </div>
     <!-- /.navbar-header -->
 
-    <div class="collapse navbar-collapse" id="helpdesk-nav-collapse" style="display:inline">
+    <div class="collapse navbar-collapse" id="helpdesk-nav-collapse" style="display:inline-block">
         {% if helpdesk_settings.HELPDESK_NAVIGATION_ENABLED and user.is_authenticated or user.is_staff %}
-        <ul class="nav navbar-top-links navbar-right" style="display:inline">
+        <ul class="nav navbar-top-links navbar-right" style="display:inline-block">
             <li>
                 <a href='{% url 'helpdesk:dashboard' %}'><i class="fa fa-dashboard fa-fw"></i> <span class="nav-text">{% trans "Dashboard" %}</span></a>
             </li>
