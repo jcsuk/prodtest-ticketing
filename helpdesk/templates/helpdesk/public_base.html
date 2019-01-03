@@ -14,7 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <img src= "{% static 'my_app/gogo_ba_logo.png' %}" />
+    
     <title>{% block helpdesk_title %}{% trans 'Gogo Engineering Support' %}{% endblock %}</title>
 
     <!-- Bootstrap Core CSS -->
@@ -49,9 +49,10 @@
 
     <div id='container' class="container">
         <div id='header' class="row">
-            
-            <h1>{% block h1_title %}{% trans "Gogo Test Engineering Support" %}{% endblock %}</h1>
-            
+
+            <img src="{% static 'my_app/gogo_ba_logo.png' %}" />
+            <h1>{% block h1_title %}{% trans "Test Engineering Support" %}{% endblock %}</h1>
+
             {% include "helpdesk/navigation.html" %}
         </div>
 
