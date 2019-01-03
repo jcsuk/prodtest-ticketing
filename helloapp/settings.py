@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'gr=6i9rfqls(g394x13@d3!t6!udh)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
-DEBUG = bool(os.environ.get('DJANGO_DEBUG', ''))
+DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
 ALLOWED_HOSTS = ['quiet-tundra-41855.herokuapp.com', '127.0.0.1']
 
@@ -136,10 +136,10 @@ STATIC_URL = '/static/'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'justcsuk@gmail.com'
-EMAIL_HOST_PASSWORD = 'Cambles21'
+EMAIL_HOST_USER = 'gogo.prodtest@gmail.com'
+EMAIL_HOST_PASSWORD = 'Aircell9876'
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'justcsuk@gmail.com'
+DEFAULT_FROM_EMAIL = 'gogo.prodtest@gmail.com'
 
 # Heroku: Update database configuration from $DATABASE_URL.
 import dj_database_url
