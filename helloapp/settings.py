@@ -24,8 +24,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'gr=6i9rfqls(g394x13@d3!t6!udh)h24n2!e*xjwerxou8rm)')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
+DEBUG = True
+#DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
 ALLOWED_HOSTS = ['quiet-tundra-41855.herokuapp.com', '127.0.0.1']
 
@@ -127,8 +127,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-#STATICFILES_DIRS = [
- #   os.path.join(BASE_DIR, "static")]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")]
 
 # The absolute path to the directory where collectstatic will collect static files for deployment.
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
