@@ -76,13 +76,13 @@
                     <li>
                         <a href="{% url 'helpdesk:user_settings' %}"><i class="fa fa-gear fa-fw"></i> {% trans "User Settings" %}</a>
                     </li>
-                    <li><a href='{% url ' helpdesk:rss_index' %}'><i class="fa fa-rss-square fa-fw"></i> {% trans "RSS Feeds" %}</a></li>
+                    <li><a href='{% url 'helpdesk:rss_index' %}'><i class="fa fa-rss-square fa-fw"></i> {% trans "RSS Feeds" %}</a></li>
                     {% if helpdesk_settings.HELPDESK_SHOW_CHANGE_PASSWORD and user.has_usable_password %}
                     <li><a href="{% url 'auth_password_change' %}"><i class="fa fa-user-secret fa-fw"></i> {% trans "Change password" %}</a></li>
                     {% endif %}
                     <li class="divider"></li>
                     {% if user.is_superuser %}
-                    <li><a href='{% url ' helpdesk:system_settings' %}'><i class="fa fa-gears fa-fw"></i> {% trans "System Settings" %}</a></li>
+                    <li><a href='{% url 'helpdesk:system_settings' %}'><i class="fa fa-gears fa-fw"></i> {% trans "System Settings" %}</a></li>
                     <li class="divider"></li>
                     {% endif %}
                     <li>
@@ -98,17 +98,17 @@
         {# Public menu #}
         <ul id="dropdown" class="nav navbar-nav">
             {% if helpdesk_settings.HELPDESK_ALLOW_NON_STAFF_TICKET_UPDATE %}
-            <li><a href='{% url ' helpdesk:dashboard' %}'>{% trans "Dashboard" %}</a></li>
-            <li><a href='{% url ' helpdesk:submit' %}'>{% trans "Submit a Ticket" %}</a></li>
+            <li><a href='{% url 'helpdesk:dashboard' %}'>{% trans "Dashboard" %}</a></li>
+            <li><a href='{% url 'helpdesk:submit' %}'>{% trans "Submit a Ticket" %}</a></li>
             {% else %}
             {% if helpdesk_settings.HELPDESK_SUBMIT_A_TICKET_PUBLIC %}
-            <li><a href='{% url ' helpdesk:submit' %}'>{% trans "Submit a Ticket" %}</a></li>
+            <li><a href='{% url 'helpdesk:submit' %}'>{% trans "Submit a Ticket" %}</a></li>
             {% endif %}
             {% endif %}
             {% if helpdesk_settings.HELPDESK_KB_ENABLED %}
-            <li><a href='{% url ' helpdesk:kb_index' %}'>{% trans "Knowledgebase" %}</a></li>{% endif %}
+            <li><a href='{% url 'helpdesk:kb_index' %}'>{% trans "Knowledgebase" %}</a></li>{% endif %}
             {% if not request.path == '/helpdesk/login/' or user.is_authenticated %}
-            <li>{% if user.is_authenticated %}<a href='{% url ' helpdesk:logout' %}'>{% trans "Logout" %}</a>{% else %}<a href='{% url ' helpdesk:login' %}?next={% if next %}{{ next|escape }}{% else %}{% url 'helpdesk:home' %}{% endif %}'>{% trans "Log In" %}</a>{% endif %}</li>
+            <li>{% if user.is_authenticated %}<a href='{% url 'helpdesk:logout' %}'>{% trans "Logout" %}</a>{% else %}<a href='{% url 'helpdesk:login' %}?next={% if next %}{{ next|escape }}{% else %}{% url 'helpdesk:home' %}{% endif %}'>{% trans "Log In" %}</a>{% endif %}</li>
             {% endif %}
         </ul>
         {% endif %}
