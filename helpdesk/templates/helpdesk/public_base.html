@@ -1,6 +1,7 @@
 ﻿{% load i18n %}
 {% load load_helpdesk_settings %}
 {% load static from staticfiles %}
+{% load Static %}
 {% with request|load_helpdesk_settings as helpdesk_settings %}
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +14,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>{% block helpdesk_title %}<img src= "{% Static 'my_app/gogo_ba_logo.png' %}" />{% trans 'Gogo Engineering Support' %}{% endblock %}</title>
+    <img src= "{% Static 'my_app/gogo_ba_logo.png' %}" />
+    <title>{% block helpdesk_title %}{% trans 'Gogo Engineering Support' %}{% endblock %}</title>
 
     <!-- Bootstrap Core CSS -->
     {% if helpdesk_settings.HELPDESK_USE_CDN %}
