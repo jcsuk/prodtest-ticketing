@@ -31,7 +31,7 @@ ALLOWED_HOSTS = ['quiet-tundra-41855.herokuapp.com', '127.0.0.1', 'www.gogotests
 
 
 # Application definition
-SITE_ID = 1
+SITE_ID = 2
 LOGIN_URL = '/helpdesk/login/'
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'helpdesk',
 ]
 
-SITE_ID = 1
+SITE_ID = 2
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
