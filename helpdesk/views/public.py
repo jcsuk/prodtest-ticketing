@@ -142,7 +142,7 @@ def view_ticket(request):
                 'helpdesk_settings': helpdesk_settings,
                 'next': redirect_url,
             })
-    elif ticket_req is None and email is None:
+    elif ticket_req is None: #and email is None:
         error_message = None
     else:
         error_message = _('Missing ticket ID or e-mail address. Please try again.')

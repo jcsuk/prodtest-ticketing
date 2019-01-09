@@ -129,7 +129,7 @@ HELPDESK_EMAIL_FALLBACK_LOCALE = getattr(settings, 'HELPDESK_EMAIL_FALLBACK_LOCA
 
 # hide the 'assigned to' / 'Case owner' field from the 'create_ticket' view?
 HELPDESK_CREATE_TICKET_HIDE_ASSIGNED_TO = getattr(
-    settings, 'HELPDESK_CREATE_TICKET_HIDE_ASSIGNED_TO', True)
+    settings, 'HELPDESK_CREATE_TICKET_HIDE_ASSIGNED_TO', False)
 
 
 #################
