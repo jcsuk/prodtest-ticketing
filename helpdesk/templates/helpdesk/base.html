@@ -6,15 +6,13 @@
 {% with user|saved_queries as user_saved_queries_ %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>{% block helpdesk_title %}Engineering Support{% endblock %} </title>
+    <title>{% block helpdesk_title %}Engineering Support{% endblock %} :: {% trans "Powered by django-helpdesk" %}</title>
     <!-- Bootstrap Core CSS -->
     {% if helpdesk_settings.HELPDESK_USE_CDN %}
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -120,19 +118,15 @@
     {% block helpdesk_head %}{% endblock %}
 
 </head>
-
 <body id="helpdesk-body">
-
     <div id='container' class="container">
         <div id='header' class="row">
             <h1>{% block h1_title %}{% trans "Helpdesk" %}{% endblock %}</h1>
             {% include "helpdesk/navigation.html" %}
         </div>
-
         <div id='body' class="row">
             {% block helpdesk_body %}{% endblock %}
         </div>
-
         <div id='footer' class="row">
             <div class="col-md-2">{% include "helpdesk/attribution.html" %}</div>
         </div>
@@ -141,10 +135,8 @@
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="{% static 'helpdesk/vendor/metisMenu/metisMenu.min.js' %}"></script>
-
     <!-- Custom Theme JavaScript -->
     <script src="{% static 'helpdesk/dist/js/sb-admin-2.js' %}"></script>
-
 </body>
 </html>
 {% endwith %}
