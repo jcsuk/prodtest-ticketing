@@ -90,7 +90,7 @@ HELPDESK_SUBMIT_A_TICKET_PUBLIC = getattr(settings, 'HELPDESK_SUBMIT_A_TICKET_PU
 # in staff.py will be defined.
 HELPDESK_ALLOW_NON_STAFF_TICKET_UPDATE = getattr(settings,
                                                  'HELPDESK_ALLOW_NON_STAFF_TICKET_UPDATE',
-                                                 True)
+                                                 False)
 
 # show edit buttons in ticket follow ups.
 HELPDESK_SHOW_EDIT_BUTTON_FOLLOW_UP = getattr(settings,
