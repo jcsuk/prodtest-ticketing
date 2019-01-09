@@ -95,20 +95,20 @@ def homepage(request):
         'kb_categories': knowledgebase_categories
     })
 
-
+#Removed email neccessary to view ticket
 @protect_view
 def view_ticket(request):
     ticket_req = request.GET.get('ticket', None)
-    email = request.GET.get('email', None)
+    #email = request.GET.get('email', None)
 
-    if ticket_req and email:
+    if ticket_req: # and email:
         queue, ticket_id = Ticket.queue_and_id_from_query(ticket_req)
         try:
-            ticket = Ticket.objects.get(id=ticket_id, submitter_email__iexact=email)
+            ticket = Ticket.objects.get(id=ticket_id) #, submitter_email__iexact=email)
         except ObjectDoesNotExist:
-            error_message = _('Invalid ticket ID or e-mail address. Please try again.')
+            error_message = _('Invalid ticket ID. Please try again.') #or email address
         except ValueError:
-            error_message = _('Invalid ticket ID or e-mail address. Please try again.')
+            error_message = _('Invalid ticket ID. Please try again.') #or email address
         else:
             if request.user.is_staff:
                 redirect_url = reverse('helpdesk:view', args=[ticket_id])
@@ -135,7 +135,7 @@ def view_ticket(request):
             # redirect user back to this ticket if possible.
             redirect_url = ''
             if helpdesk_settings.HELPDESK_NAVIGATION_ENABLED:
-                redirect_url = reverse('helpdesk:view', args=[ticket_id])
+                redirect_url = reverse('helpdesk:view', args=[ticket_id]) 
 
             return render(request, 'helpdesk/public_view_ticket.html', {
                 'ticket': ticket,
@@ -145,7 +145,7 @@ def view_ticket(request):
     elif ticket_req is None: #and email is None:
         error_message = None
     else:
-        error_message = _('Missing ticket ID or e-mail address. Please try again.')
+        error_message = _('Missing ticket ID. Please try again.') #or email address
 
     return render(request, 'helpdesk/public_view_form.html', {
         'ticket': False,
