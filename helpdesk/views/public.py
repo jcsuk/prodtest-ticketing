@@ -149,7 +149,7 @@ def view_ticket(request):
 
     return render(request, 'helpdesk/public_view_form.html', {
         'ticket': False,
-        'email': email,
+        #'email': email,
         'error_message': error_message,
         'helpdesk_settings': helpdesk_settings,
     })
